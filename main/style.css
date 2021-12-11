@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/fundo.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.canvas {
+    min-width: 100vw;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    font: 36px "Saira Condensed", sans-serif;
+}
+
+button {
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background: black;
+    font: 24px "Saira Condensed", sans-serif;
+    color: white;
+    border: 2px solid white;
+    /* box-shadow: 4px 4px black, -4px 4px black, -4px -4px black, 4px -4px black,
+                6px 6px white, -6px 6px white, -6px -6px white, 6px -6px white; */
+}
+
+button:hover, button.active:hover {
+    box-shadow: 4px 4px black, -4px 4px black, -4px -4px black, 4px -4px black,
+                6px 6px white, -6px 6px white, -6px -6px white, 6px -6px white;
+}
+
+button.active {
+    background: white;
+    color: black;
+    border: 4px solid black;
+    box-shadow: 2px 2px white, -2px 2px white, -2px -2px white, 2px -2px white;
+}
