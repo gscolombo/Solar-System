@@ -128,14 +128,14 @@ if (canvas.getContext){
 
     /*Objetos*/
     // Planetas
-    const earth = new Planet("../img/Terra.png", 150, 40, 15);
-    const mercury = new Planet("../img/Mercúrio.png", 70, 20, 8);
-    const venus = new Planet("../img/Vênus.png", 110, 30, 10);
-    const mars = new Planet ("../img/Marte.png", 186, 55, 9);
-    const jupiter = new Planet("../img/jupiter2.png", 320, 100, 30);
-    const saturn = new Planet("../img/saturn.png", 380, 120, 60, 23);
-    const uranus = new Planet("../img/uranus.png", 440, 140, 15.5);
-    const neptune = new Planet("../img/neptune.png", 475, 160, 15);
+    const earth = new Planet("./img/Terra.png", 150, 40, 15);
+    const mercury = new Planet("./img/Mercúrio.png", 70, 20, 8);
+    const venus = new Planet("./img/Vênus.png", 110, 30, 10);
+    const mars = new Planet ("./img/Marte.png", 186, 55, 9);
+    const jupiter = new Planet("./img/jupiter2.png", 320, 100, 30);
+    const saturn = new Planet("./img/saturn.png", 380, 120, 60, 23);
+    const uranus = new Planet("./img/uranus.png", 440, 140, 15.5);
+    const neptune = new Planet("./img/neptune.png", 475, 160, 15);
 
     // Cinturão de Asteroides
     const belt = [];
@@ -145,26 +145,26 @@ if (canvas.getContext){
         let y = Math.floor(Math.random() * (81 - 70) + 70);
         let size = Math.floor(Math.random() * (5 - 1) + 1);
         let src;
-        if (n === 1) src = "../img/a1.png"
-        else if (n === 2) src = "../img/a2.png"
-        else if (n === 3) src = "../img/a3.png"
-        else if (n === 4) src = "../img/a4.png"
+        if (n === 1) src = "./img/a1.png"
+        else if (n === 2) src = "./img/a2.png"
+        else if (n === 3) src = "./img/a3.png"
+        else if (n === 4) src = "./img/a4.png"
 
         belt.push(new Planet(src, x, y, size));
     };
 
     //Luas
-    const moon = new Moon("../img/Lua.png", 6, 5, 5, earth);
-    const deimos = new Moon("../img/Deimos.png", 13, 8, 3, mars);
-    const fobos = new Moon("../img/Fobos.png", 6, 4, 4, mars);
-    const ganymede = new Moon("../img/Ganimedes.png", 15, 4, 6, jupiter);
-    const calisto = new Moon("../img/Calisto.png", 18, 5, 4, jupiter);
-    const io = new Moon("../img/Io.png", 20, 7, 3.5, jupiter);
-    const europa = new Moon("../img/Europa.png", 12, 3, 3, jupiter);
-    const titan = new Moon("../img/Titã.png", 6, 5, 3.2, saturn);
+    const moon = new Moon("./img/Lua.png", 6, 5, 5, earth);
+    const deimos = new Moon("./img/Deimos.png", 13, 8, 3, mars);
+    const fobos = new Moon("./img/Fobos.png", 6, 4, 4, mars);
+    const ganymede = new Moon("./img/Ganimedes.png", 15, 4, 6, jupiter);
+    const calisto = new Moon("./img/Calisto.png", 18, 5, 4, jupiter);
+    const io = new Moon("./img/Io.png", 20, 7, 3.5, jupiter);
+    const europa = new Moon("./img/Europa.png", 12, 3, 3, jupiter);
+    const titan = new Moon("./img/Titã.png", 6, 5, 3.2, saturn);
 
     function init(){
-        sun.src = "../img/sun.png";
+        sun.src = "./img/sun.png";
         ctx.beginPath();
         ctx.arc(centerX, centerY, 25, Math.PI, 0);
         
