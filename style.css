@@ -35,8 +35,6 @@ button {
     font: 24px "Saira Condensed", sans-serif;
     color: white;
     border: 2px solid white;
-    /* box-shadow: 4px 4px black, -4px 4px black, -4px -4px black, 4px -4px black,
-                6px 6px white, -6px 6px white, -6px -6px white, 6px -6px white; */
 }
 
 button:hover, button.active:hover {
