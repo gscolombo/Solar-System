@@ -1,15 +1,30 @@
 const canvas = document.getElementById("canvas");
 const orbitsButton = document.querySelector(".orbits");
 
+let canvasWidth, canvasHeight, centerY, centerX, resizeFactor;
+
+function handleCanvasResize() {
+    canvasWidth = `${window.screen.width}`;
+    canvasHeight = `${canvasWidth / 2}`;
+
+    if (canvasWidth >= 960) {
+        canvasHeight = window.screen.height * 0.65;
+    }
+
+    canvas.setAttribute("width", canvasWidth);
+    canvas.setAttribute("height", canvasHeight);
+
+    centerY = canvasHeight / 2;
+    centerX = canvasWidth / 2;
+    resizeFactor = canvasWidth / 1080;
+}
+
+handleCanvasResize();
+document.addEventListener("load", handleCanvasResize);
+
 let time = Math.floor(Math.random() * (60001 - 600) + 600);
 let showOrbits = true;
-
-const centerY = canvas.clientHeight/2;
-const centerX = canvas.clientWidth/2;
-
-let orbitWidth;
-
-const sunSize = 110;
+const sunSize = 110 * resizeFactor;
 
 orbitsButton.addEventListener("click", () => {
     if (showOrbits) showOrbits = false;
@@ -27,10 +42,10 @@ if (canvas.getContext){
         constructor(src, x, y, sizeX, sizeY = sizeX){
             this.imgObj = new Image();
             this.imgObj.src = src;
-            this.x = x;
-            this.y = y;
-            this.sizeX = sizeX;
-            this.sizeY = sizeY;
+            this.x = x * resizeFactor;
+            this.y = y * resizeFactor;
+            this.sizeX = sizeX * resizeFactor;
+            this.sizeY = sizeY * resizeFactor;
         }
 
         setOrbit = () => {
@@ -186,7 +201,7 @@ if (canvas.getContext){
     };
     
     function draw(){
-        ctx.clearRect(0, 0, 1080, 480);
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight + 80);
         ctx.drawImage(sun, centerX - (sunSize / 2), centerY - (sunSize / 2), sunSize, sunSize);
 
         ctx.save();
@@ -197,7 +212,7 @@ if (canvas.getContext){
         } else {
             ctx.strokeStyle = "transparent";
         }
-        
+
         earth.setOrbit();
         mercury.setOrbit();
         venus.setOrbit();
