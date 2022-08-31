@@ -19,8 +19,8 @@ function handleCanvasResize() {
     resizeFactor = canvasWidth / 1080;
 }
 
-handleCanvasResize();
-document.addEventListener("load", handleCanvasResize);
+window.onload = handleCanvasResize;
+window.resize = handleCanvasResize;
 
 let time = Math.floor(Math.random() * (60001 - 600) + 600);
 let showOrbits = true;
