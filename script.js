@@ -18,6 +18,7 @@ window.onload = () => {
         centerY = canvasHeight / 2;
         centerX = canvasWidth / 2;
         resizeFactor = canvasWidth / 1080;
+        set();
     }
     
     handleCanvasResize();
@@ -328,7 +329,7 @@ window.onload = () => {
 
             init();
         }
-    }
+    set();
 };
 
 
