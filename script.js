@@ -1,5 +1,3 @@
-
-
 window.onload = () => {
     const canvas = document.getElementById("canvas");
     const orbitsButton = document.querySelector(".orbits");
@@ -23,7 +21,7 @@ window.onload = () => {
     }
     
     handleCanvasResize();
-    window.resize = handleCanvasResize;
+    window.onresize = handleCanvasResize;
     
     let time = Math.floor(Math.random() * (60001 - 600) + 600);
     let showOrbits = true;
